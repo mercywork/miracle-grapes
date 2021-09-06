@@ -16,11 +16,12 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('OrderedQty');
             $table->string('phone_number');
             $table->string('email');
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('postcode');
             $table->string('adress');
+            $table->string('password');
             $table->timestamps();
         });
     }

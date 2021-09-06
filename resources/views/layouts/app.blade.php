@@ -5,7 +5,8 @@
         <title>MiracleGrapes[ミラクルグレープス]</title>
         <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
         <meta name="description" content="山梨でも一部の地域でしか美味しいものが育たない言われる巨峰。お一人様三房までご注文頂けます。">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css　integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="app.css">
     </head>
     
     <body>
@@ -17,27 +18,41 @@
         {{-- ナビゲーションバー --}}
         @include('commons.navbar')
 
-    </header>   
+    </header>
     
-        <div class="container">
-            {{-- エラーメッセージ --}}
-            @include('commons.error_messages')
+    <!--ここからメインビジュアル画像-->
+    <div class="main_visual">
+    
+        @include('commons.img')
+        
+    </div>
+    
+    
+    <div class="container">
+        {{-- エラーメッセージ --}}
+        @include('commons.error_messages')
 
-            @yield('content')
-        </div>
-         
+        @yield('content')
+    
+    </div>
+    
+    <div class="point">
+        <p>
+             山梨県内でも限られた地域でしか育たない巨峰。<br>たくさんのものがあふれる今ですが、<br>おいしいものを少しだけ食す喜びをプレゼント致します。
+        </p>
+    </div>     
+
+    {{-- カード --}}    
+    <div class="three_card">
         
-        <!--ここからメインビジュアル画像-->
-        <div id="main_visual">
-        </div>
-        
-        <!--ここからwrapperー-->
-        <div id="wrapper">
-        </div>
-        
+        @include('commons.card')
+　　
+    </div>
+
         <!--ここからフッター-->
-        <footer>
-        </footer>
+    <footer>
+         <small>&copy; MiracleGrapes</small>        
+    </footer>
         
       
 
