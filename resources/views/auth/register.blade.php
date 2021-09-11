@@ -15,8 +15,8 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('phone_number', '電話番号') !!}
-                    {!! Form::phone_number('phone_number', null, ['class' => 'form-control']) !!}
+                    {!! Form::label('phone', '電話番号') !!}
+                    {!! Form::text('phone', null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
@@ -28,12 +28,12 @@
                 
                 <div class="form-group">
                     {!! Form::label('postcode', '郵便番号') !!}
-                    {!! Form::postcode('postcode', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('postcode', null, ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
                     {!! Form::label('adress', '住所') !!}
-                    {!! Form::adress('adress', ['class' => 'form-control']) !!}
+                    {!! Form::text('adress', null, ['class' => 'form-control']) !!}
                 </div>
 
                  <div class="form-group">
