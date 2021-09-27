@@ -61,6 +61,7 @@
                 <div class="button">
                     <div class="btn">
                         {!! Form::submit('登録', ['class' => 'btn btn-primary btn-block']) !!}
+                        
                     </div>
                 </div>
             
