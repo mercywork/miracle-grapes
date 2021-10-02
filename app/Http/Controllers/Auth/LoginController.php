@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginFormRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -55,7 +56,17 @@ class LoginController extends Controller
      
     public function login(LoginFormRequest $request)
     {
-        dd($request->all());
+        $credentials = $request->only('email', 'password');
+        
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            
+            return redirect('auth.home')->with('login_success','ログインが成功しました！');
+        }
+        
+        return back()->withErrors([
+            'login_error' => 'メールアドレスかパスワードが間違っています。',
+            ]);
     }
     
     
