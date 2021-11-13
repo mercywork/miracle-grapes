@@ -54,6 +54,7 @@
     <div class="three_card">
         
         @include('commons.card')
+      
 　　
     </div>
 

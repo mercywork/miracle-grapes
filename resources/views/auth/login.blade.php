@@ -30,6 +30,12 @@
                     </div>
                 @endif
                 
+                @if (session('logout'))
+                    <div class="alert alert-danger">
+                        {{ session('logout')}}
+                    </div>
+                @endif
+                
                 <div class="form-group">
                     {!! Form::label('email', 'メールアドレス') !!}
                     {!! Form::email('email', null, ['class' => 'form-control']) !!}

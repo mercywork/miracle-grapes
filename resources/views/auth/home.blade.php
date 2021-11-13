@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <title>ホーム画面</title>
     </head>
     <body>
@@ -16,9 +17,16 @@
                 <h3>ようこそ　MiracleGrapesへ！</h3>
             </div>
             <ul>
-                <li>名前: {{ Auth::user()->name }}</li>
+                <li>お名前: {{ Auth::user()->name }}</li>
                 <li>メールアドレス: {{ Auth::user()->email }}</li>
             </ul>
+            
+            <form action="{{ route('logout') }}"
+            method="POST">
+                
+                @csrf
+                <button class="btn btn-danger">ログアウト</button>
+            </form>
         </div>
     </body>
     </html>
