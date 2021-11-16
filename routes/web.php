@@ -62,7 +62,3 @@ Route::get('/complete', 'ContactsController@complete')->name('complete');
 
 
 //ショッピングカート
-
-
-
-Route::get('/add-to-cart/{product}', 'CartController@add')->name('cart.add')->middleware('auth');
