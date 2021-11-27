@@ -15,25 +15,25 @@ class ProductSeeder extends Seeder
         DB::table('products')->truncate();
         DB::table('products')->insert([
            'name' => '巨峰',
-           'detail' => '大人気の巨峰です。約2Kg',
-           'fee' => '1,500円(税込）',
-           'imgpath' => 'image/black.jpeg',
+           'description' => '大人気の巨峰です。約2Kg',
+           'price' => '1500',
+           'cover_img' => 'image/black.jpeg',
             
             ]);
             
         DB::table('products')->insert([
            'name' => 'シャインマスカット',
-           'detail' => '少数生産のためお早めにご注文ください。約2Kg',
-           'fee' => '1,800円(税込）',
-           'imgpath' => 'image/shine.jpeg',
+           'description' => '少数生産のためお早めにご注文ください。約2Kg',
+           'price' => '1800',
+           'cover_img' => 'image/shine.jpeg',
             
             ]);  
             
         DB::table('products')->insert([
            'name' => '巨峰＆シャインマスカット',
-           'detail' => '巨峰もシャインマスカットも欲しい方におすすめ。約2Kg',
-           'fee' => '3,300円(税込）',
-           'imgpath' => 'image/grapes-set.jpeg',
+           'description' => '巨峰もシャインマスカットも欲しい方におすすめ。約2Kg',
+           'price' => '3300',
+           'cover_img' => 'image/grapes-set.jpeg',
             
             ]);  
     }
