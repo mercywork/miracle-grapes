@@ -49,11 +49,15 @@
              山梨県内でも限られた地域でしか育たない巨峰。<br>たくさんのものがあふれる今ですが、<br>おいしいものを少しだけ食す喜びをプレゼント致します。
         </p>
     </div>     
+    
+    <div class="product">
+        <h2>商　品</h2>
+    </div>
 
     {{-- カード --}}    
     <div class="three_card">
         
-        @include('commons.card')
+        @yield('content')
       
 　　
     </div>

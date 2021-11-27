@@ -62,3 +62,12 @@ Route::get('/complete', 'ContactsController@complete')->name('complete');
 
 
 //ショッピングカート
+Route::redirect('/','/home');
+
+Auth::routes();
+
+Route::get('/home','HomeController@index')->name('home');
+
+Route::get('/注文/(product)','CartController@add')->name('cart.add')->middleware('auth');
+
+Route::get('/cart','cartcontroller@index')->name('cart.index')->middleware('auth');
