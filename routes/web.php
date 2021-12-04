@@ -15,9 +15,7 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 // ユーザ登録
 
@@ -62,12 +60,12 @@ Route::get('/complete', 'ContactsController@complete')->name('complete');
 
 
 //ショッピングカート
-Route::redirect('/','/home');
 
-Auth::routes();
 
-Route::get('/home','HomeController@index')->name('home');
+Route::get('/','CartController@index');
 
-Route::get('/注文/(product)','CartController@add')->name('cart.add')->middleware('auth');
+Route::get('shop','ShopController@index')->name('shop');
 
-Route::get('/cart','cartcontroller@index')->name('cart.index')->middleware('auth');
+Route::get('/mycart','ShopController@myCart');
+
+
