@@ -39,7 +39,7 @@ Route::get('home', function () {
 })->name('home');
 
 //ログアウト
-Route::post('logout',  'Auth\LoginController@logout')->name('logout');
+Route::post('/logout',  'Auth\LoginController@logout')->name('logout');
 
 
 });
@@ -66,6 +66,12 @@ Route::get('/','CartController@index');
 
 Route::get('shop','ShopController@index')->name('shop');
 
-Route::get('/mycart','ShopController@myCart');
+Route::get('/mycart','ShopController@myCart')->middleware('auth');
+
+
+
+Route::post('/mycart', 'ShopController@addMycart');
+
+
 
 

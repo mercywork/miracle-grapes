@@ -4,22 +4,45 @@
 <div class="container-fluid">
    <div class="">
        <div class="mx-auto" style="max-width:1200px">
-           <h1 style="color:#555555; text-align:center; font-size:1.2em; padding:24px 0px; font-weight:bold;">商品一覧</h1>
-           <div class="">
+           <h1 >商品一覧</h1>
+               <div class="">
                <div class="d-flex flex-row flex-wrap">
-                   商品一覧を出したい
                    
-                   @foreach($products as $product)
-                       {{$product->name}} <br>
-                       {{$product->fee}}円<br>
-                       <img scr="/image/{{$product->impath}}" alt="" class="incart">
-                       <br>
-                       {{$product->detail}} <br>
-                    @endforeach
-                    {{$products->links()}} 
-               </div>
-           </div>
-       </div>
-   </div>
+                   
+                @foreach($products as $product)
+                   
+                    <div class="col-xs-6 col-sm-4 col-md-4 ">
+                        <div class="mycart_box">
+                           {{$product->name}} <br>
+                           {{$product->price}}円<br>
+                           <img src={{$product->cover_img}} alt="" class="incart"><br>
+                           {{$product->description}}<br>
+                           
+                           {{$product->detail}}<br>
+                       
+                       
+                        <form action="mycart" method="post">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <input type="submit" value="カートに入れる" class="button">
+                        </form>
+                        
+                        </div>
+                        
+                    
+                   
+                        
+                    </div>    
+                
+                @endforeach
+                
+                </div>
+                <div class="text-center" style="width: 200px;margin: 20px auto;">
+                {{$products->links()}} 
+                </div>
+            </div>    
+        </div>
+    </div>
 </div>
+
 @endsection
