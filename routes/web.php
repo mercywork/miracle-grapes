@@ -38,6 +38,7 @@ Route::get('home', function () {
     return view('auth.home');
 })->name('home');
 
+
 //ログアウト
 Route::post('/logout',  'Auth\LoginController@logout')->name('logout');
 
@@ -66,12 +67,22 @@ Route::get('/','CartController@index');
 
 Route::get('shop','ShopController@index')->name('shop');
 
-Route::get('/mycart','ShopController@myCart')->middleware('auth');
 
+//Routeのグループ化
 
+Route::group(['middleware' => ['auth']], function () {
+
+Route::get('/mycart','ShopController@myCart');
 
 Route::post('/mycart', 'ShopController@addMycart');
 
+Route::post('/cartdelete','ShopController@deleteCart');
 
+//購入完了
 
+Route::post('/checkout', 'ShopController@checkout');
+
+});
+
+Auth::routes();
 

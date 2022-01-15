@@ -17,25 +17,34 @@
                 @endif
                 <h3>ようこそ　MiracleGrapesへ！</h3>
             </div>
-            <ul>
+            
+            
+            <ul class="auth-wrap">
                 <li>お名前: {{ Auth::user()->name }}</li>
                 <li>メールアドレス: {{ Auth::user()->email }}</li>
             </ul>
             
+            <div class="product">
+                
+            <a href="/shop" class="button">商品一覧へ</a>
+            
+            
+            </div>
             
             
             <form action="{{ route('logout') }}"
             method="POST">
                 
                 @csrf
+                
                 <button class="btn btn-danger">ログアウト</button>
+                
+                
             </form>
             
-            <div class="product">
-                
-            <a href="/shop">商品一覧へ</a>
             
-            </div>
+            
+            
         </div>
     </body>
     </html>

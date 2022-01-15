@@ -40,7 +40,7 @@
                                    <a class="nav-link" style="color:#fefefe;"  href="{{ route('register') }}">{{ __('会員登録') }}</a>
                                </li>
                            @endif
-                       @else
+                     @else
                            <li class="nav-item dropdown">
                                <a id="navbarDropdown" style="color:#fefefe;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                    {{ Auth::user()->name }} <span class="caret"></span>
@@ -91,6 +91,10 @@
             @yield('content')
 
         </div>
+        
+        <footer>
+         <small>&copy; MiracleGrapes</small>        
+        </footer>  
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>

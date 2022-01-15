@@ -24,8 +24,9 @@
                         <form action="mycart" method="post">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <input type="submit" value="カートに入れる" class="button">
+                            <input type="submit" value="カートに入れる" class="cart_button">
                         </form>
+                        
                         
                         </div>
                         
